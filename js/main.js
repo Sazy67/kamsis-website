@@ -189,7 +189,7 @@ const form = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name    = form.name.value.trim();
@@ -206,13 +206,26 @@ if (form) {
     btnText.textContent = 'Gönderiliyor...';
     btn.disabled = true;
 
-    setTimeout(() => {
-      form.reset();
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.reset();
+        formSuccess.classList.add('show');
+        setTimeout(() => formSuccess.classList.remove('show'), 5000);
+        btnText.textContent = 'Mesaj Gönder';
+      } else {
+        btnText.textContent = 'Hata! Tekrar deneyin';
+      }
+    } catch {
+      btnText.textContent = 'Hata! Tekrar deneyin';
+    } finally {
       btn.disabled = false;
-      btnText.textContent = 'Mesaj Gönder';
-      formSuccess.classList.add('show');
-      setTimeout(() => formSuccess.classList.remove('show'), 5000);
-    }, 1400);
+    }
   });
 }
 
