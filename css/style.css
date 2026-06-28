@@ -663,6 +663,46 @@ body.light p { color: var(--text2); }
   padding: 3px 10px;
   border-radius: 6px;
 }
+.duduk-card {
+  border-color: rgba(0,212,170,0.25);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(0,212,170,0.05) 100%);
+}
+.duduk-card:hover { border-color: var(--accent3); }
+
+.duduk-icon {
+  background: linear-gradient(135deg, rgba(0,212,170,0.15), rgba(79,126,248,0.15));
+  border: 1px solid rgba(0,212,170,0.3);
+  color: var(--accent3);
+}
+
+.duduk-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent3);
+  background: rgba(0,212,170,0.1);
+  border: 1px solid rgba(0,212,170,0.25);
+  padding: 4px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.05em;
+}
+
+.duduk-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.duduk-title-row h3 { margin: 0; letter-spacing: 0.05em; }
+.duduk-sub {
+  font-size: 0.75rem;
+  color: var(--accent3);
+  font-weight: 600;
+  font-family: var(--mono);
+}
+
 .project-cta-card {
   display: flex;
   align-items: center;
