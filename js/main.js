@@ -261,3 +261,79 @@ if (scrollIndicator) {
     document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
   });
 }
+
+/* ----- THEME TOGGLE ----- */
+const themeToggle = document.getElementById('themeToggle');
+const iconMoon    = document.getElementById('iconMoon');
+const iconSun     = document.getElementById('iconSun');
+
+const applyTheme = (light) => {
+  document.body.classList.toggle('light', light);
+  iconMoon.style.display = light ? 'none'  : 'block';
+  iconSun.style.display  = light ? 'block' : 'none';
+};
+
+const savedTheme = localStorage.getItem('theme');
+applyTheme(savedTheme === 'light');
+
+themeToggle.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  iconMoon.style.display = isLight ? 'none'  : 'block';
+  iconSun.style.display  = isLight ? 'block' : 'none';
+});
+
+/* ----- LANGUAGE TOGGLE ----- */
+const translations = {
+  tr: {
+    'nav.about':    'Hakkımızda',
+    'nav.services': 'Hizmetler',
+    'nav.projects': 'Projeler',
+    'nav.tech':     'Teknolojiler',
+    'nav.contact':  'İletişim',
+    'hero.badge':   "2000'den beri aktif · İzmir, Türkiye",
+    'hero.title':   'Teknoloji ile<br /><span class="gradient-text">Geleceği İnşa</span><br />Ediyoruz',
+    'hero.desc':    'Yazılım geliştirme, siber güvenlik ve bilişim çözümlerinde 25+ yıllık deneyimle işletmenizi dijital dünyada güçlendiriyoruz.',
+    'hero.cta1':    'Hizmetlerimiz',
+    'hero.cta2':    'Projelerimizi Gör',
+    'hero.stat1':   'Yıl Deneyim',
+    'hero.stat2':   'Tamamlanan Proje',
+    'hero.stat3':   'Mutlu Müşteri',
+  },
+  en: {
+    'nav.about':    'About',
+    'nav.services': 'Services',
+    'nav.projects': 'Projects',
+    'nav.tech':     'Technologies',
+    'nav.contact':  'Contact',
+    'hero.badge':   'Active since 2000 · Izmir, Turkey',
+    'hero.title':   'Building the Future<br /><span class="gradient-text">with Technology</span>',
+    'hero.desc':    'We empower your business in the digital world with 25+ years of expertise in software development, cybersecurity, and IT solutions.',
+    'hero.cta1':    'Our Services',
+    'hero.cta2':    'View Projects',
+    'hero.stat1':   'Years of Experience',
+    'hero.stat2':   'Projects Completed',
+    'hero.stat3':   'Happy Clients',
+  }
+};
+
+const langToggle = document.getElementById('langToggle');
+let currentLang  = localStorage.getItem('lang') || 'tr';
+
+const applyLang = (lang) => {
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  langToggle.textContent = lang === 'tr' ? 'EN' : 'TR';
+  document.documentElement.lang = lang;
+};
+
+applyLang(currentLang);
+
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'tr' ? 'en' : 'tr';
+  localStorage.setItem('lang', currentLang);
+  applyLang(currentLang);
+});

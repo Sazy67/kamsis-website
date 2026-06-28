@@ -25,12 +25,19 @@
         <span class="logo-bracket">&lt;</span>kamsis<span class="logo-bracket">/&gt;</span>
       </a>
       <nav class="nav-links" id="navLinks">
-        <a href="#about">Hakkımızda</a>
-        <a href="#services">Hizmetler</a>
-        <a href="#projects">Projeler</a>
-        <a href="#tech">Teknolojiler</a>
-        <a href="#contact" class="btn btn-outline">İletişim</a>
+        <a href="#about" data-i18n="nav.about">Hakkımızda</a>
+        <a href="#services" data-i18n="nav.services">Hizmetler</a>
+        <a href="#projects" data-i18n="nav.projects">Projeler</a>
+        <a href="#tech" data-i18n="nav.tech">Teknolojiler</a>
+        <a href="#contact" class="btn btn-outline" data-i18n="nav.contact">İletişim</a>
       </nav>
+      <div class="nav-controls">
+        <button class="ctrl-btn" id="langToggle" aria-label="Dil Değiştir" title="EN / TR">TR</button>
+        <button class="ctrl-btn" id="themeToggle" aria-label="Tema Değiştir" title="Tema">
+          <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
@@ -50,35 +57,35 @@
     <div class="container hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        2000'den beri aktif · İzmir, Türkiye
+        <span data-i18n="hero.badge">2000'den beri aktif · İzmir, Türkiye</span>
       </div>
-      <h1 class="hero-title">
+      <h1 class="hero-title" data-i18n="hero.title">
         Teknoloji ile<br />
         <span class="gradient-text">Geleceği İnşa</span><br />
         Ediyoruz
       </h1>
-      <p class="hero-desc">
+      <p class="hero-desc" data-i18n="hero.desc">
         Yazılım geliştirme, siber güvenlik ve bilişim çözümlerinde
         25+ yıllık deneyimle işletmenizi dijital dünyada güçlendiriyoruz.
       </p>
       <div class="hero-cta">
-        <a href="#services" class="btn btn-primary">Hizmetlerimiz</a>
-        <a href="#projects" class="btn btn-ghost">Projelerimizi Gör</a>
+        <a href="#services" class="btn btn-primary" data-i18n="hero.cta1">Hizmetlerimiz</a>
+        <a href="#projects" class="btn btn-ghost" data-i18n="hero.cta2">Projelerimizi Gör</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-num" data-target="25">0</span><span class="stat-unit">+</span>
-          <span class="stat-label">Yıl Deneyim</span>
+          <span class="stat-label" data-i18n="hero.stat1">Yıl Deneyim</span>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
           <span class="stat-num" data-target="150">0</span><span class="stat-unit">+</span>
-          <span class="stat-label">Tamamlanan Proje</span>
+          <span class="stat-label" data-i18n="hero.stat2">Tamamlanan Proje</span>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
           <span class="stat-num" data-target="80">0</span><span class="stat-unit">+</span>
-          <span class="stat-label">Mutlu Müşteri</span>
+          <span class="stat-label" data-i18n="hero.stat3">Mutlu Müşteri</span>
         </div>
       </div>
     </div>

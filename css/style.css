@@ -191,6 +191,59 @@ p  { color: var(--text2); }
 }
 .nav-links .btn { padding: 8px 20px; }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 16px;
+}
+
+.ctrl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--mono);
+  transition: all var(--transition);
+}
+.ctrl-btn:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ----- LIGHT MODE ----- */
+body.light {
+  --bg:        #f0f4ff;
+  --bg2:       #e8eeff;
+  --bg3:       #dde5ff;
+  --surface:   #ffffff;
+  --surface2:  #eef2ff;
+  --border:    rgba(79,126,248,0.15);
+  --border2:   rgba(79,126,248,0.3);
+  --text:      #1a2035;
+  --text2:     #3d4f7a;
+  --text3:     #6b7fa8;
+}
+body.light .navbar {
+  background: rgba(240,244,255,0.92);
+}
+body.light .hero-video { opacity: 0.15; }
+body.light .hero-video-overlay {
+  background: linear-gradient(to bottom, rgba(240,244,255,0.75) 0%, rgba(240,244,255,0.92) 100%);
+}
+body.light .hero-title,
+body.light .hero-badge { color: var(--text); }
+body.light p { color: var(--text2); }
+
 .hamburger {
   display: none;
   flex-direction: column;
